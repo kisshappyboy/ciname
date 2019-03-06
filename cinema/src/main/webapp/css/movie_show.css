@@ -1,0 +1,144 @@
+@charset "utf-8"
+/**
+ * @author ixingkongyue
+ */
+body,html{
+  font-family:"Times New Roman",Georgia,Serif;
+  font-size:14px;
+  color:#555;
+}
+*{
+padding:0px;
+margin: 0px;
+}
+
+li{
+list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#main_4{
+width: 960px;
+background-color: #fffeff;
+border:1px gray solid;
+margin:0 auto;
+}
+#movie_show_4{
+width:960px;
+margin: 10px auto;
+}
+#movie_show_img_4{
+float: left;
+margin-left:40px;
+}
+#movie_show_describe_4{
+margin-left:120px;
+float: left;
+width:380px;
+overflow: hidden;
+}
+#pre_view_show_4,#pictures_show_4,#movie_describe_show_4{
+margin-left: 20px;
+}
+#movie_show_ul_4{
+float: left;
+margin-top:20px;
+}
+#movie_show_title_4{
+text-align: center;
+}
+#movie_show_title_4 a{
+color:blue;
+font-size: 32px;
+
+}
+
+#movie_show_ul_4 li{
+margin:12px 5px 0px;
+}
+
+
+#ticket_buy_4{
+width:118px;
+height:63px;
+float:left;
+margin:50px 0px 30px 0px;
+}
+
+.division_4{
+clear:both;
+
+}
+
+#movie_describe_4{
+text-align: center;
+width: 150px;
+padding:8px 10px 8px;
+line-height: 18px;
+display:inline-block;
+font-size: 18px;
+color: blue;
+background: url("../image/movie_list/navigation_bg.jpg") repeat-x;
+}
+#pictures_4,#pre_view_4{
+text-align: center;
+width: 150px;
+padding:8px 10px 8px;
+line-height: 18px;
+display:inline-block;
+font-size: 18px;
+color: blue;
+background: url("../image/movie_show/navigation_bg_change.jpg") repeat-x;
+
+}
+
+#pictures_show_4 ul{
+float:left;
+
+}
+#pictures_show_4 ul li{
+float: left;
+margin-right: 30px;
+}
+#movie_describe_show_4{
+clear:both;
+}
+#movie_comment_title_4{
+font-size: 20px;
+margin-left:20px;
+
+}
+#movie_comment_4{
+padding: 0px 30px 0px;
+border:1px gray solid;
+
+}
+#movie_comment_4 ul li{
+font-size:13px;
+}
+#movie_comment_4 ul li span{
+visibility: hidden;
+}
+#next_page_4{
+clear: both;
+width:800px;
+margin: 10px 350px 0px;
+}
+.next_page_margin_4{
+display:inline-block;
+border: 1px #ccc solid;
+font-size: 14px;
+line-height: 14px;
+margin:0px 10px 0px;
+padding: 3px;
+color:black;
+}
+.next_page_margin_4 a{
+color:black;
+}
+#publish_comment_4{
+margin-left:50px;
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!---->
+<configuration>
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
+			<Pattern>%d{HH:mm:ss.SSS}
+				%-5level %logger{80} - %msg%n</Pattern>
+		</encoder>
+	</appender>
+	<logger name="com.tosit.cinema" level="debug" />
+	<logger name="org.springframework" level="error" />
+	<logger name="org.hibernate.type" level="error" />
+	<root>
+		<level value="error" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</configuration>
+
+<!--<configuration>
+   <appender name="file"
+       class="ch.qos.logback.core.rolling.RollingFileAppender">
+       <file>d://logs/tosit/tosit.log</file>
+       <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+           <fileNamePattern>d://logs/tosit/tosit.%d{yyyy-MM-dd}.log.zip
+           </fileNamePattern>
+       </rollingPolicy>
+       <layout class="ch.qos.logback.classic.PatternLayout">
+           <pattern>%-20(%d{HH:mm:ss.SSS}
+               [%thread]) %-5level %logger{80} - %msg%n</pattern>
+       </layout>
+   </appender>
+   <logger name="com.tosit.ssh" level="debug" />
+   <logger name="org.springframework" level="trace" />
+   <logger name="org.hibernate.type" level="trace" />
+   <root>
+       <level value="debug" />
+       <appender-ref ref="file" />
+       <appender-ref ref="STDOUT" />
+   </root>
+</configuration>-->

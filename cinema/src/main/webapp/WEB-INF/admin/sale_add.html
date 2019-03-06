@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+<style type="text/css">
+.content input{
+	width:300px;
+}
+.content{
+	font-size:16px;
+}
+.add{
+	padding:10px;
+	width:1000px;
+}
+.button{
+	text-align:center;
+	width:425px;
+}
+.search{
+	padding:10px;
+}
+.search img{
+	position:absolute;
+	margin-bottom:0;
+	padding-bottom:0;
+	top: 20px;
+	left: 181px;
+}
+.easyui-panel{
+	padding:50px;
+}
+body{
+	background:#fafafa;
+}
+</style>
+	<script>
+		$(function(){
+			$('#sale_add').datagrid({
+				title:'查询电影信息结果',
+				iconCls:'icon-save',
+				width:1000,
+				height:450,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'sale_data.json',
+				sortName: 'movieID',
+				sortOrder: 'desc',
+				remoteSort: false,
+				idField:'movieID',
+				frozenColumns:[[
+	               		{title:'电影ID',field:'movieID',width:80,sortable:true}
+				]],
+				columns:[[
+				{title:'电影名称',field:'movieName',width:200},
+				{title:'电影类型',field:'movieType',width:80},
+				{title:'上映时间',field:'screenTime',width:80},
+				{title:'电影长度',field:'movieLength',width:100,sortable:true},
+				{title:'电影导演',field:'movieDirector',width:100,sortable:true},
+				{title:'电影演员',field:'movieActor',width:100,sortable:true},
+				{title:'操作', field:'saleSelect',align:'center', width:100,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Edit Delete</span>';
+						}
+				}				
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+			var p = $('#sale_add').datagrid('getPager');
+			if (p){
+				$(p).pagination({
+					onBeforeRefresh:function(){
+						alert('before refresh');
+					}
+				});
+			}
+			
+		});
+	</script>
+</head>
+<body>
+<div class="search">
+	<input type="text" value="请输入要查询的电影名称"/>
+    <a href="sale_add.html"><img src="images/search.jpg" width="22px"/></a>
+    <br/> <br/>
+  <table id="sale_add" width="100%"></table>
+</div>
+<div class="add" >
+<div class="easyui-panel" title="添加零售信息">
+
+	<h1>添加零售信息：</h1><br>
+    <form id="sale_add" method="post">
+    <div class="content">
+        <div>
+            <label for="movie_name">电&nbsp;影&nbsp;名&nbsp;称:</label>&nbsp;
+            <input class="easyu-validatebox" type="text" name="sale_name" required="true" >
+        </div>
+        <div>
+            <label for="movie_type">剩余&nbsp;座位数:</label>&nbsp;
+			<input class="easyu-validatebox" type="text" name="sale_rest" required="true" >
+        </div>
+        <div>
+        <label for="releaseDate">已订&nbsp;座位数:</label>&nbsp;
+        <input class="easyu-validatebox" type="text" name="sale_book" required="true" >
+         </div>
+         <div>
+        <label for="movie_length">放&nbsp;映&nbsp;时&nbsp;间:</label>&nbsp;
+         <input class="easyu-validatebox" type="text" name="sale_data" required="true" >
+         </div>
+         <div>
+         <label for="poster">零&nbsp;售&nbsp;价&nbsp;格:</label>&nbsp;
+         <input class="easyu-validatebox" type="text" name="sale_price" required="true" >
+         </div>
+         
+         <div>
+            <label for="movie_directors">所在&nbsp;放映厅:</label>&nbsp;
+            <input class="easyu-validatebox" type="text" name="sale_hall" required="true" >
+        </div>
+        </div>
+        <br/>
+         <div class="button">
+            <input type="submit" value="添加">&nbsp;&nbsp;
+            <input type="reset" value="清空">
+        </div>
+    </form>
+</div>
+</div>
+	
+</body>
+</html>

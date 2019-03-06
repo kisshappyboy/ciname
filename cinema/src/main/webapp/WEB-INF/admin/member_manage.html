@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>会员信息管理</title>
+	<link rel="stylesheet" type="text/css" href="css/easyui.css">
+	<link rel="stylesheet" type="text/css" href="css/icon.css">
+	<link rel="stylesheet" type="text/css" href="css/demo.css">
+	<script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+	<script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+    <style type="text/css">
+	.easyui-panel{
+		padding:30px;
+	}
+	.update{
+		width:700px;
+	}
+		
+	</style>
+</head>
+<body>
+	<div style="margin:10px 0;"></div>
+	
+	<table id="dg" title="会员信息列表" style="width:700px;height:300px" data-options="
+				rownumbers:true,
+				singleSelect:true,
+				autoRowHeight:false,
+				pagination:true,
+				pageSize:10">
+		<thead>
+			<tr>
+				<th data-options="field:'username'" width="150">会员姓名</th>
+				<th data-options="field:'loginname'" width="150">登录名称</th>
+				<th data-options="field:'password'" width="100">登录密码</th>
+				<th data-options="field:'email'" width="200">Email</th>
+				<th data-options="field:'phone'" width="200">联系方式</th>
+			</tr>
+		</thead>
+	</table>
+	<script>
+		function getData(){
+			var rows = [];
+			for(var i=1; i<=800; i++){
+				var amount = Math.floor(Math.random()*1000);
+				var price = Math.floor(Math.random()*1000);
+				rows.push({
+					username: 'User'+i,
+					password: '123456',
+					loginname: 'Login'+i,
+					email:'***@163.com',
+					phone:'187********'
+	
+				});
+			}
+			return rows;
+		}
+		
+		function pagerFilter(data){
+			if (typeof data.length == 'number' && typeof data.splice == 'function'){	// is array
+				data = {
+					total: data.length,
+					rows: data
+				}
+			}
+			var dg = $(this);
+			var opts = dg.datagrid('options');
+			var pager = dg.datagrid('getPager');
+			pager.pagination({
+				onSelectPage:function(pageNum, pageSize){
+					opts.pageNumber = pageNum;
+					opts.pageSize = pageSize;
+					pager.pagination('refresh',{
+						pageNumber:pageNum,
+						pageSize:pageSize
+					});
+					dg.datagrid('loadData',data);
+				}
+			});
+			if (!data.originalRows){
+				data.originalRows = (data.rows);
+			}
+			var start = (opts.pageNumber-1)*parseInt(opts.pageSize);
+			var end = start + parseInt(opts.pageSize);
+			data.rows = (data.originalRows.slice(start, end));
+			return data;
+		}
+		
+		$(function(){
+			$('#dg').datagrid({loadFilter:pagerFilter}).datagrid('loadData', getData());
+		});
+	</script>
+    <br/>
+	<div class="update">
+	<div class="easyui-panel" title="添加会员信息">
+     <h2>修改会员信息</h2>
+		<table>
+			<tr>
+				<td>会员姓名:</td>
+				<td><input class="easyui-validatebox" data-options="required:true,validType:'length[3,10]'"></td>
+			</tr>
+            <tr>
+				<td>登录名称:</td>
+				<td><input class="easyui-validatebox" data-options="required:true,validType:'length[3,10]'"></td>
+			</tr>
+            <tr>
+				<td>登录密码:</td>
+				<td><input class="easyui-validatebox" data-options="required:true,validType:'length[3,10]'"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input class="easyui-validatebox" data-options="required:true,validType:'email'"></td>
+			</tr>
+			
+			<tr>
+				<td>联系方式:</td>
+				<td><input class="easyui-validatebox" data-options="required:true"></td>
+			</tr>
+		</table>
+        <br/>
+        <input type="button" value="提交"/>
+
+	</div></div>
+	
+</body>
+</html>

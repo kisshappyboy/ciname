@@ -1,0 +1,137 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+<style type="text/css">
+.content input{
+	width:300px;
+}
+.content{
+	font-size:16px;
+}
+.add{
+	padding:10px;
+	width:1150px;
+}
+.button{
+	text-align:center;
+	width:425px;
+}
+.search{
+	padding:10px;
+}
+.search img{
+	position:absolute;
+	margin-bottom:0;
+	padding-bottom:0;
+	top: 20px;
+	left: 181px;
+}
+.easyui-panel{
+	padding:50px;
+}
+body{
+	background:#fafafa;
+}
+</style>
+	<script>
+		$(function(){
+			$('#order_add').datagrid({
+				title:'查询订单结果',
+				iconCls:'icon-save',
+				width:1150,
+				height:450,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'order_data.json',
+				sortName: 'movieID',
+				sortOrder: 'desc',
+				remoteSort: false,
+				idField:'movieID',
+				frozenColumns:[[
+	               		{title:'电影ID',field:'movieID',width:80,sortable:true}
+				]],
+				columns:[[
+				{title:'订单编号',field:'orderID',width:100},
+				{title:'电影编号',field:'movieID',width:100},
+				{title:'影院编号',field:'theaterID',width:100},
+				{title:'用户名',field:'userID',width:100,sortable:true},
+				{title:'订单时间',field:'orderTime',width:120,sortable:true},
+				{title:'票数',field:'ticketNum',width:60,sortable:true},
+				{title:'座位编号',field:'seatNo',width:80,sortable:true},
+				{title:'放映时间',field:'oscreenTime',width:120,sortable:true},
+				{title:'订单金额',field:'buyingPrice',width:100,sortable:true},
+				{title:'修改/删除', field:'orderSelect',align:'center', width:150,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Update / Delete</span>';
+						}
+				}				
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+			var p = $('#order_add').datagrid('getPager');
+			if (p){
+				$(p).pagination({
+					onBeforeRefresh:function(){
+						alert('before refresh');
+					}
+				});
+			}
+			
+		});
+	</script>
+</head>
+<body>
+<div class="search">
+	<input type="text" value="请输入要查询的订单号"/>
+    <a href="order_add.html"><img src="images/search.jpg" width="22px"/></a>
+    <br/> 
+	<br/>
+  <table id="order_add" width="100%"></table>
+</div>
+<div class="add" >
+<div class="easyui-panel" title="修改订单信息">
+  <h1>修改订单信息：</h1>
+	<br>
+    <form id="order_add" method="post">
+    <div class="content">
+        <div>
+            <label for="movie_name">订单编号:</label>&nbsp;
+            <input class="easyu-validatebox" type="text" name="order_name" required="true" >
+        </div>
+        <div>
+            <label for="movie_type">订购票数:</label>&nbsp;
+			<input class="easyu-validatebox" type="text" name="order_rest" required="true" >
+        </div>
+        <div>
+        <label for="releaseDate">座位编号:</label>&nbsp;
+        <input class="easyu-validatebox" type="text" name="order_book" required="true" >
+       </div>
+         <div>
+        <label for="movie_length">放映时间:</label>&nbsp;
+         <input class="easyu-validatebox" type="text" name="order_data" required="true" >
+         </div>
+         <div>
+         <label for="poster">零售价格:</label>&nbsp;
+         <input class="easyu-validatebox" type="text" name="order_price" required="true" >
+         </div>
+         
+         <div></div>
+      </div>
+        <br/>
+         <div class="button">
+            <input type="submit" value="添加">&nbsp;&nbsp;
+            <input type="reset" value="清空">
+        </div>
+    </form>
+</div>
+</div>
+	
+</body>
+</html>

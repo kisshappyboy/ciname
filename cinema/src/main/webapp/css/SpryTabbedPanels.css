@@ -1,0 +1,250 @@
+@charset "UTF-8";
+
+.TabbedPanels {
+	overflow: hidden;
+	margin: 0px;
+	padding: 0px;
+	clear: none;
+	width: 100%; /* IE Hack to force proper layout when preceded by a paragraph. (hasLayout Bug)*/
+}
+
+
+.TabbedPanelsTabGroup {
+	margin: 0px;
+	padding: 0px;
+}
+
+
+.TabbedPanelsTab {
+	position: relative;
+	top: 1px;
+	float: left;
+	padding: 4px 10px;
+	margin: 0px 1px 0px 0px;
+	font: bold 2em sans-serif;
+	background-color: #DDD;
+	list-style: none;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #999;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	cursor: pointer;
+	border-radius:4px;
+}
+
+
+.TabbedPanelsTabHover {
+	background-color: #CCC;
+}
+
+
+.TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: 1px solid #EEE;
+}
+
+
+.TabbedPanelsTab a {
+	color: black;
+	text-decoration: none;
+}
+
+
+.TabbedPanelsContentGroup {
+	clear: both;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	background-color: #EEE;
+}
+
+
+.TabbedPanelsContent {
+	overflow: hidden;
+	padding: 4px;
+}
+
+
+.TabbedPanelsContentVisible {
+}
+
+
+
+.VTabbedPanels {
+	overflow: hidden;
+	zoom: 1;
+}
+
+
+.VTabbedPanels .TabbedPanelsTabGroup {
+	float: left;
+	width: 10em;
+	height: 20em;
+	background-color: #EEE;
+	position: relative;
+	border-top: solid 1px #999;
+	border-right: solid 1px #999;
+	border-left: solid 1px #CCC;
+	border-bottom: solid 1px #CCC;
+}
+
+
+.VTabbedPanels .TabbedPanelsTab {
+	float: none;
+	margin: 0px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+}
+
+
+.VTabbedPanels .TabbedPanelsTabSelected {
+	background-color: #EEE;
+	border-bottom: solid 1px #999;
+}
+
+
+.VTabbedPanels .TabbedPanelsContentGroup {
+	clear: none;
+	float: left;
+	padding: 0px;
+	width: 30em;
+	height: 20em;
+}
+/*------------------my_code------------------*/
+.TabbedPanelsTabGroup a{
+}
+/*------------------------------------*/
+/* Styles for Printing */
+@media print {
+	.TabbedPanels {
+		overflow: visible !important;
+	}
+	.TabbedPanelsContentGroup {
+		display: block !important;
+		overflow: visible !important;
+		height: auto !important;
+	}
+	.TabbedPanelsContent {
+		overflow: visible !important;
+		display: block !important;
+		clear:both !important;
+	}
+	.TabbedPanelsTab {
+		 overflow: visible !important;
+		 display: block !important;
+		 clear:both !important;
+	}
+}
+
+
+/*-----------------我主页的css-begin---------------*/
+.index_pic_1{
+	width:200px;
+	padding:0;
+}
+.index_pic_1 img{
+	height:220px;
+	width:180px;
+	margin:5px auto;
+	border:1px solid gray;
+	display:block
+}
+.index_left_1{
+	display:inline-block;
+	float:left;
+}
+.index_left_1 a{
+	border:1px solid silver;
+	margin-left:22px;
+	display:inline-block;
+	float:left;
+}
+.index_left_1 > img{
+	border:1px solid red;
+}
+.clear{
+	width:100%;
+	clear:both;
+}
+.index_fenye_1{
+	border:1px solid silver;
+	 height:20px; 
+	 width:94%;
+	 margin-left:21px;
+	 margin-top:5px;
+}
+/*----------------中部-begin----------------------*/
+#index_middle_content_1{
+	background-color:#F0F0F0; 
+	padding-top:0px;
+	border-bottom:5px solid #000033;
+	border:2px solid gray;
+	border-top:5px solid #000033;
+	border-bottom:5px solid #000033;
+}
+/*-----------------中部-end-------------------*/
+/*------------------资讯-begin----------------------*/
+#index_main_content_1{
+	width:700px;
+	float:left;
+}
+#index_main_content_1 .TabbedPanelsTab{
+	width:195px; 
+	text-align:center;
+}
+#index_main_right_1{
+	width:250px;
+	float:left;
+	border-bottom:2px solid silver;
+}
+#index_main_right_1 h2{
+	height:38px; 
+	line-height:38px; 
+	background-color:#2385AA; 
+	color:white; 
+}
+#index_main_right_1 ul{
+}
+#index_main_right_1 ul li{
+	height:32px;
+	line-height:32px;
+	letter-spacing:0.1em;
+	background-color:#DDDDDD;
+	border-bottom:1px solid silver;
+}
+#index_main_right_1 ul li a{
+	margin-left:10px;
+	color:black;
+	font-size:12px;
+}
+#scan_more_1{
+	width:100%;
+	height:43px;
+	line-height:43px;
+	background:url(../pic/news_bg_bottom_1.png) repeat 0 0;
+}
+#index_main_right_1_ul_li_hover{
+	background-color:#2385AA;
+	color:black;
+}
+/*------------------资讯-end----------------------*/
+#footer_1{
+	border-top:2px solid silver;
+	border-left:1px solid silver;
+	border-bottom:2px solid silver;
+	border-right:1px solid silver;
+	width:958px;
+	margin:0 auto; 
+	background-color:#2385AA;
+	margin-bottom:20px;
+	color:white;
+	font-size:12px;
+}
+/*----------------------影评-begin---------------------*/
+
+/*----------------------影评-end---------------------*/
+/*-----------------我主页的css-end--------------*/

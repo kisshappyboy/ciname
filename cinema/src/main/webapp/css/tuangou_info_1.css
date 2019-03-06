@@ -1,0 +1,264 @@
+@charset "utf-8";
+/* CSS Document */
+#tuangou_info_content_1 {
+    width: 960px;
+    margin: 0px auto;
+}
+#tuangou_detail_1{
+	width:664px;
+	border:1px solid silver;
+	float:left;
+}
+#tuangou_detail_1 #title_1{
+	padding:0px;
+	height:40px;
+	line-height:40px;
+}
+#tuangou_detail_1 h2{
+	margin-left:10px;
+	text-indent:1em;
+	color: gray;
+	font-size:18px;
+	letter-spacing:0.1em;
+	margin-bottom:10px;
+}
+#title_1{
+	width:90%;
+	margin-left:10px;
+}
+#deal-left_1{
+	margin-left:10px;
+	width:206px;
+	float:left;
+	background-color:#E0E0E0;
+}
+#left_top_1{
+	height:62px;
+	width:100%;
+	line-height:62px;
+	background:url(../pic/tukuan_nav_1.png) no-repeat 0 0;
+}
+#left_buy_1{
+	height: 40px;
+	padding: 12px 3px 17px 6px;
+	border-bottom: 1px solid rgb(227, 227, 227);
+	font-size: 16px;
+	text-align: center;
+}
+#left_top_1 .price_1{
+	font-size: 34px;
+	font-family: arial,sans-serif;
+	color: rgb(255, 255, 255);
+}
+#left_top_1 .price_1 span{
+	font-size: 20px;
+	font-family: arial,sans-serif;
+	color: rgb(255, 255, 255);
+	margin-left:5px;
+}
+#left_top_1 .or_price_1{
+	font-size:14px;
+	color: rgb(255, 255, 255);
+}
+#left_buy_1 #left{
+	display:inline-block;
+	height:40px;
+	width:86px;
+	background:url(../pic/qianggou.png) no-repeat 0 0;
+}
+#left_buy_1 #right{
+	display:inline-block;
+	height:38px;
+	width:89px;
+	background:url(../pic/gouwuche.png) no-repeat 0 0;
+}
+#left_notice_1{
+	padding: 11px 5px;
+	border-top: 1px solid rgb(251, 251, 251);
+	border-bottom: 1px solid rgb(227, 227, 227);
+	height:40px;
+	text-align: center;
+	color: rgb(102, 102, 102);
+	border-bottom:1px solid silver;
+	border-top:1px solid silver;
+}
+#left_notice_1 .left_notice_p1_1 strong{
+	color: rgb(238, 82, 57);
+}
+#left_notice_1 .left_notice_p2_1{
+	font-size:12px; 
+	margin-top:5px;
+}
+#left_bottom_1{
+	border-bottom:1px solid silver;
+}
+#left_bottom_1 #left{
+	border-right:1px solid silver;
+}
+#left_bottom_1 #left,#left_bottom_1 #right{
+	float:left;
+	width:101px;
+	height:70px;
+}
+#left_bottom_1 #left span{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin-left:37px;
+	margin-top:5px;
+	background: url(../pic/tukuan_x_1.png) no-repeat scroll 0px 0px transparent;
+}
+#left_bottom_1 #right span{
+	display:inline-block;
+	width:30px;
+	height:30px;
+	margin-left:37px;
+	margin-top:5px;
+	background: url(../pic/tukuan_xx_1.png) no-repeat scroll 0px 0px transparent;
+}
+#left_bottom_1 #left a,#left_bottom_1 #right a{
+	display:inline-block;
+	margin-top:10px;
+	margin-left:10px;
+	color: rgb(102, 102, 102);
+	font-size:14px;
+}
+#deal-right_1{
+	width:440px;
+	float:left;
+}
+.clear{
+	width:100%;
+	clear:both;
+}
+#share_1{
+	margin-top:10px;
+	border-top:1px solid silver;
+	width:100%;
+	height:38px;
+	background-color:#F4F4F4;
+}
+#share_1 ul{
+	list-style:none;
+}
+#share_1 ul li{
+	display:inline-block;
+}
+
+#order_1{
+	width:664px; 
+}
+#order_detail_1 #order_img_1{
+	margin-top:10px;
+	height:105px;
+	width:664px;
+	background:url(../pic/order_detail.png) no-repeat 0 0;
+}
+#order_detail_1 #order_intro_1{
+	width:663px; 
+	height:30px;
+	line-height:30px;
+	border-left:1px solid silver;
+	border-bottom:1px solid silver;
+	border-right:1px solid silver;
+}
+#order_detail_1 #order_intro_1 span{
+	text-align:center;
+	border-right:dotted 1px silver;
+	display:inline-block;
+}
+#order_1 #order_price_1 p{
+	margin-top:5px;
+	font-size:14px;
+	margin-right:10px;
+}
+#order_1 #order_price_1 p span{
+	margin-left:20px;
+}
+#order_1 #order_price_1 p b{
+	color:#FF8900;
+	font-size:18px;
+}
+#order_notice_1{
+	width:663px;
+	margin-top:10px;
+	border:1px solid silver;
+	background-color:#FFFDE8;
+	padding-top:10px;
+	padding-bottom:10px;
+}
+#order_notice_1 ul{
+	margin-left:28px; 
+	list-style: none ; 
+	font-size:14px; 
+	letter-spacing:0.1em;
+}
+#order_notice_1 h3{
+	margin-left:10px;
+}
+#order_notice_1 ul li{
+	margin-top:8px;
+	color:#666666;
+}
+#movie_order_1{
+	width:664px; 
+	margin-top:10px;
+}
+#movie_order_1 ul{
+	list-style:none;
+}
+.movie_order_div_1{
+	margin-left:20px;
+}
+.movie_order_div_1 ul{
+	margin-top:20px;
+}
+.movie_order_div_1,.movie_order_inner_ul_1 img{
+	float:left;
+	margin-top:10px;
+}
+.movie_order_div_1,.movie_order_div_1 li,.movie_order_inner_ul_1 img{
+	display:inline-block;
+}
+.movie_order_inner_ul_1 img,.movie_order_inner_ul_1 ul li{
+	margin-left:10px;
+}
+
+/*---------------------------------*/
+#ad_1{
+	width:260px;
+	height:1250px;
+	border:1px silver solid;
+	float:left;
+	margin-left:15px;
+}
+#ad_hot_1{
+	border-bottom:1px solid silver;
+}
+#ad_1 img{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#ad_solve h3{
+	margin-left:10px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+#ad_solve p{
+	margin-top:10px;
+	margin-bottom:10px;
+	border-bottom:1px solid silver;
+}
+#ad_solve p span{
+	height:25px;
+	line-height:25px;
+	font-size:14px;
+	color:#37ADB1;
+	margin-left:20px;
+	
+}
+#ad_solve p #inner_span_1{
+	
+}
+

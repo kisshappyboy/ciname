@@ -1,0 +1,63 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+	<script>
+		$(function(){
+			$('#sale_list').datagrid({
+				title:'零售列表',
+				iconCls:'icon-save',
+				width:1000,
+				height:450,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'sale_data.json',
+				sortName: 'movieID',
+				sortOrder: 'desc',
+				remoteSort: false,
+				idField:'movieID',
+				frozenColumns:[[
+	               		{title:'电影ID',field:'movieID',width:80,sortable:true}
+				]],
+				columns:[[
+				{title:'电影名称',field:'movieName',width:200},
+				{title:'剩余座位数',field:'saleRest',width:80},
+				{title:'已订座位数',field:'saleRest',width:80},
+				{title:'放映时间',field:'saleDate',width:100,sortable:true},
+				{title:'零售价格',field:'salePrice',width:100,sortable:true},
+				{title:'所在放映厅',field:'saleHall',width:100,sortable:true},
+				{title:'删除', field:'saleDelete',align:'center', width:100,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Edit Delete</span>';
+						}
+				},
+				{title:'修改', field:'saleUpdate',align:'center', width:100,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Edit Update</span>';
+						}
+				}				
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+			var p = $('#sale_list').datagrid('getPager');
+			if (p){
+				$(p).pagination({
+					onBeforeRefresh:function(){
+						alert('before refresh');
+					}
+				});
+			}
+			
+		});
+	</script>
+</head>
+<body>
+	<table id="sale_list" width="100%"></table>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd"
+>
+    <!--开启aspectj aop 注解   -->
+    <aop:aspectj-autoproxy/>
+    <context:component-scan base-package="com.tosit.cinema"/>
+
+  <!--  <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
+        <property name="url" value="jdbc:oracle:thin:@127.0.0.1:1521:tosit"/>
+        <property name="username" value="cinema"/>
+        <property name="password" value="cinema"/>
+    </bean>-->
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+          destroy-method="close">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"/>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/买票?charsetEncoding=utf8"/>
+        <property name="user" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+
+    <!-- spring和MyBatis完美整合，不需要mybatis的配置映射文件 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource" />
+        <!-- 自动扫描mapping.xml文件 -->
+        <!---->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+        <!-- 扫描entity包 使用别名 -->
+        <property name="typeAliasesPackage" value="com.tosit.cinema.entity"/>
+    </bean>
+       <!--以上是spring和mybatis的整合
+	   
+	   dao层的整合 -->
+    <!-- DAO接口所在包名，Spring会自动查找其下的类 -->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.tosit.cinema.dao" />
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+    </bean>
+
+	<!-- 下面是集成自动事务的 -->
+    <!-- (事务管理)transaction manager, use JtaTransactionManager for global tx-->
+    <bean id="transactionManager"
+          class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+    <!--定义事务声明 -->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!-- the transactional semantics... -->
+        <tx:attributes>
+            <!-- all methods starting with 'get' are read-only -->
+            <tx:method name="get*" read-only="true" />
+            <tx:method name="list*" read-only="true" />
+            <tx:method name="find*" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="paged*" propagation="SUPPORTS" read-only="true" />
+            <tx:method name="add*" propagation="REQUIRED" />
+            <tx:method name="update*" propagation="REQUIRED" />
+            <tx:method name="delete*" propagation="REQUIRED" />
+            <!-- other methods use the default transaction settings (see below) -->
+            <tx:method name="*" />
+        </tx:attributes>
+    </tx:advice>
+
+
+	
+	<!-- 管理service实现类-->
+    <aop:config>
+        <!-- 切入点 -->
+        <aop:pointcut id="businessService"
+                      expression="execution(* com.tosit.cinema.service.*Service.*(..))" />
+        <!-- 定义事务拦截对应的通知 -->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="businessService" />
+    </aop:config>
+
+
+    <!--开启注解事务
+    <tx:annotation-driven/>-->
+</beans>

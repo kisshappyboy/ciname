@@ -1,0 +1,102 @@
+@charset "utf-8";
+/* CSS Document */
+*{
+	padding:0;
+	margin:0;
+}
+#goods_all_1{
+	width:960px;
+	margin:0 auto;
+}
+.good_item_1{
+	width:234px;
+	height:320px;
+	border:solid silver 1px;
+	border-radius:5px;
+	float:left;
+	margin-left:3px;
+	margin-top:3px;
+}
+.good_img_1,.good_title_1,.good_price_1,.good_info_1{
+	width: 220px;
+	margin:auto;
+	margin-top:10px;
+}
+.good_title_1 a{
+	color:#000;
+	font-size:12px;
+	letter-spacing:0.1em;
+	padding-left:20px;
+}
+.good_title_1 a:hover{
+	text-decoration:underline;
+}
+.good_price_1 span{
+	margin-left:8px; 
+	font-size:36px;
+}
+.good_price_1 small{
+	color:#CE0205;
+	font-size:20px;
+}
+.good_price_1 a{
+	margin-left:40px;
+}
+
+.good_info_1 span{
+	font-size:12px;
+	margin-left:8px;
+}
+.good_info_1 del{
+	color:#999;
+}
+.good_info_1 .good_info_span_1{
+	font-size:12px;
+	margin-left:8px;
+}
+.good_info_1 .good_info_span_1 b{
+	color:#999;
+}
+.good_info_1 .good_info_span_count_1{
+	font-size:14px;
+	margin-left:25px; 
+	color:#CE0205;
+}
+.good_info_1 .good_info_num_1{
+	font-size:14px;margin-left:25px;
+}
+/*----------------------分页-begin----------------------*/
+#tuan_fenye_1{
+	 height:20px;
+	 margin-top:10px;
+}
+#tuan_fenye_1 ul{
+	list-style:none;
+}
+#tuan_fenye_1 ul li{
+	display:inline-block;
+	margin-left:5px;
+}
+#tuan_fenye_1 ul li a{
+	display:inline-block;
+	width:15px;
+	height:15px;
+	line-height:15px;
+	border:1px solid gray;
+}
+/*----------------------分页-end----------------------*/
+.good_img_1{
+	margin-left:2px;
+	width:200px;
+	margin:0 auto;
+	margin-top:10px;
+	border:1px solid silver;
+	padding:0;
+}
+.good_img_1 img{
+	height:145px;
+	width:180px;
+	margin:5px auto;
+	border:2px solid gray;
+	display:block
+}

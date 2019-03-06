@@ -1,0 +1,32 @@
+
+
+A:link {COLOR: #333; TEXT-DECORATION: none}
+A:visited {	COLOR: #333; TEXT-DECORATION: none}
+A:hover {COLOR: #a10000; TEXT-DECORATION: none}
+
+
+.product-area {
+	
+	MARGIN: 0 auto;
+}
+
+
+.dropList {
+	WIDTH: 235px; BORDER-BOTTOM: #ebebeb 1px solid; HEIGHT: 300px
+}
+.dropList DL DT {
+	BORDER-RIGHT: #ebebeb 1px solid; BORDER-TOP: #ebebeb 1px solid; BORDER-LEFT: #ebebeb 1px solid; WIDTH: 233px; TEXT-INDENT: 20px; LINE-HEIGHT: 29px; BORDER-BOTTOM: #ebebeb 1px; HEIGHT: 29px
+}
+.dropList DL DT P {
+	CURSOR: pointer; MARGIN-RIGHT: 8px
+}
+.dropList DL DT P.dropList-hover {
+	 COLOR: #a10000; MARGIN-RIGHT: 7px
+}
+.dropList DL DD {
+	DISPLAY: none; OVERFLOW: hidden; WIDTH: 235px; HEIGHT: 120px
+}
+.dropList DL DD IMG {
+	BORDER-TOP: #ebebeb 1px solid
+}
+

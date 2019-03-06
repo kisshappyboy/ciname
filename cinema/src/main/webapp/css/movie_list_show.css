@@ -1,0 +1,146 @@
+@charset "utf-8"
+/**
+ * @author ixingkongyue
+ */
+body,html{
+  font-family:"Times New Roman",Georgia,Serif;
+  font-size:14px;
+  color:#555;
+}
+*{
+padding:0px;
+margin: 0px;
+}
+
+li{
+list-style-type: none;
+}
+
+a{
+  text-decoration: none;
+}
+
+#main_4{
+width: 960px;
+background-color: #fffeff;
+margin:0 auto;
+border: 2px solid gray;
+}
+#picture_show_4{
+width:960px;
+height:300px;
+overflow: hidden;
+}
+
+#picture_4{
+width: 648px;
+height: 300px;
+float:left;
+}
+
+.movie_list_show_4{
+width:300px;
+height:100px;
+font-size: 18px;
+color: #808080;
+background:url("../image/movie_list/movie_list_show_bg.jpg") no-repeat;
+position: relative;
+float: left;
+left:12px;
+
+}
+.title_4{
+position: relative;
+left: 80px;
+top:20px;
+}
+.main_actors_4{
+position: relative;
+left: 60px;
+top:30px;
+}
+#now_4{
+text-align: center;
+width: 150px;
+padding:8px 10px 8px;
+line-height: 18px;
+display:inline-block;
+font-size: 18px;
+color: blue;
+background: url("../image/movie_list/navigation_bg.jpg") repeat-x;
+}
+#future_4{
+text-align: center;
+width: 150px;
+margin-left:5px;
+padding:8px 10px 8px;
+line-height: 18px;
+display:inline-block;
+font-size: 18px;
+color: blue;
+background: url("../image/movie_list/navigation_bg_change.jpg")  repeat-x;
+}
+
+#now_list_4,#future_list_4{
+width:960px;
+margin: 10px auto;
+}
+
+.now_show_list_4,.future_show_list_4{
+float: left;
+margin-top:20px;
+}
+
+.now_show_list_img_4,.future_show_list_img_4{
+float: left;
+margin-left:40px;
+}
+.now_show_list_describe_4,.future_show_list_describe_4{
+float: left;
+width:240px;
+overflow: hidden;
+}
+
+
+.now_show_list_4 li,.future_show_list_4 li{
+padding:8px;
+}
+
+.now_show_list_title_4,.future_show_list_title_4{
+
+text-align: center;
+}
+.now_show_list_title_4 a,.future_show_list_title_4 a{
+color:blue;
+font-size: 18px;
+}
+.clear_4{
+clear:both;
+}
+.ticket_buy_4{
+height: 33px;
+width: 101px;
+color: #fff;
+font-size: 14px;
+text-align: center;
+padding:5px;
+margin:0px 30px 0px;
+background: url("../image/movie_list/btn_bg.jpg")  no-repeat;
+}
+#next_page_4{
+clear: both;
+width:800px;
+margin: 100px 350px 0px;
+}
+.next_page_margin_4{
+display:inline-block;
+border: 1px #ccc solid;
+font-size: 14px;
+line-height: 14px;
+margin:30px 10px 30px;
+padding: 3px;
+color:black;
+}
+.next_page_margin_4 a{
+color:black;
+}

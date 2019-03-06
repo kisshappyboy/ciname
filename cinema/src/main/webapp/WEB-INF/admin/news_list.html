@@ -1,0 +1,53 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+	<script>
+		$(function(){
+			$('#news_list').datagrid({
+				title:'资讯列表',
+				iconCls:'icon-save',
+				width:800,
+				height:450,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'news_data.json',
+				sortName: 'newsID',
+				sortOrder: 'desc',
+				remoteSort: false,
+				idField:'newsID',
+				frozenColumns:[[
+	               		{title:'资讯ID',field:'newsID',width:100,sortable:true}
+				]],
+				columns:[[
+				{title:'资讯标题',field:'newsTitle',width:300},
+				{title:'添加/修改时间',field:'lastModifyTime',width:200,sortable:true},
+				{title:'操作', field:'opt',align:'center', width:200,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Edit Delete</span>';
+						}
+				}
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+			var p = $('#news_list').datagrid('getPager');
+			if (p){
+				$(p).pagination({
+					onBeforeRefresh:function(){
+						alert('before refresh');
+					}
+				});
+			}
+		});
+	</script>
+</head>
+<body>
+	<table id="news_list" width="100%"></table>
+</body>
+</html>

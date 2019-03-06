@@ -1,0 +1,99 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style type="text/css">
+
+#top_3 {
+	background-image:url(../pic/hyzq_title.jpg);
+	background-repeat:repeat-x;
+	height:44px;
+	width:100%;
+}
+#title_3 {
+	background-image:url(../pic/menu4.jpg);
+	height:21px;
+	width:110px;
+	padding-top:25px;
+	padding-bottom:30px;
+	padding-left:30px;
+	padding-right:60px;
+	text-align:center;
+}
+#title_3 a{
+	font-size:16pt;
+	color:#000;
+	font-family: 黑体;
+	font-weight: bold;
+}
+.menu_3 {
+	background-image:url(../pic/ps_menu5.jpg);
+	height:21px;
+	width:110px;
+	padding-top:25px;
+	padding-bottom:30px;
+	padding-left:35px;
+	padding-right:55px;
+	color:#000;
+	text-align:center;
+	font-family: 黑体;
+	font-size: 13pt;
+	font-weight: bold;
+}
+.menuItem_3 {
+	background-image:url(../pic/menu5.jpg);
+	height:20px;
+	width:190px;
+	text-align:center;
+	padding:5px;
+}
+.menuA_3{
+	text-decoration:none;
+	font-family: 黑体;
+	font-size: 12pt;
+	font-weight: bold;
+	color:#000;
+}
+.menuA_3:hover {
+	color:#004485;
+	font-family: 黑体;
+	font-size: 16pt;
+	font-weight: bold;
+}
+#leftMenu_3 {
+	width:200px;
+	height:620px;
+	float:left;
+}
+#minorContainer_3 {
+	background-color:#fff;
+	height:620px;
+	width:960px;
+	margin:0 auto;
+}
+#gotoTop_3{
+	height:120px;
+	width:40px;
+	position:fixed;
+	top:400px;
+	right:157px;
+}
+#rightContainer_3 {
+	float:right;
+	width:760px;
+	height:620px;
+}
+#navigation_3 {
+	background-image:url(../pic/title_final.jpg);
+	height:120px;
+	width:960px;
+	margin:0 auto;
+}
+#iframe_3 {
+	border:0px;
+}
+#rightTop_3 {
+	background-image:url(../pic/bg-clouds3.png);
+	height:77px;
+	width:760px;
+}
+</style>

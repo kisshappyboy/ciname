@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="js/themes/default/easyui.css" />
+    <link rel="stylesheet" type="text/css" href="js/themes/icon.css" />
+    <script type="text/javascript" src="js/jquery-1.4.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easyui.min.1.2.2.js"></script>
+	<script>
+		$(function(){
+			$('#order_list').datagrid({
+				title:'订单列表',
+				iconCls:'icon-save',
+				width:1000,
+				height:450,
+				nowrap: false,
+				striped: true,
+				collapsible:true,
+				url:'order_data.json',
+				sortName: 'movieID',
+				sortOrder: 'desc',
+				remoteSort: false,
+				idField:'movieID',
+				frozenColumns:[[
+	               		{title:'电影ID',field:'movieID',width:80,sortable:true}
+				]],
+				columns:[[
+				{title:'订单编号',field:'orderID',width:100},
+				{title:'电影编号',field:'movieID',width:100},
+				{title:'影院编号',field:'theaterID',width:100},
+				{title:'用户名',field:'userID',width:100,sortable:true},
+				{title:'订单时间',field:'orderTime',width:120,sortable:true},
+				{title:'票数',field:'ticketNum',width:60,sortable:true},
+				{title:'座位编号',field:'seatNo',width:80,sortable:true},
+				{title:'放映时间',field:'oscreenTime',width:120,sortable:true},
+				{title:'订单金额',field:'buyingPrice',width:100,sortable:true},
+				{title:'修改/删除', field:'orderSelect',align:'center', width:150,rowspan:2,
+						formatter:function(value,rec){
+							return '<span style="color:red">Update / Delete</span>';
+						}
+				}				
+				]],
+				pagination:true,
+				rownumbers:true
+			});
+			var p = $('#order_list').datagrid('getPager');
+			if (p){
+				$(p).pagination({
+					onBeforeRefresh:function(){
+						alert('before refresh');
+					}
+				});
+			}
+			
+		});
+	</script>
+</head>
+<body>
+	<table id="order_list" width="100%"></table>
+</body>
+</html>

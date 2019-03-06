@@ -1,0 +1,24 @@
+
+#center {
+	Z-INDEX: 2; POSITION: absolute; TOP: 34%; LEFT: 56%
+}
+#slider {
+	Z-INDEX: 1; 
+	POSITION: absolute;
+	WIDTH: 700px; BACKGROUND: #9B9B9B; HEIGHT: 544px; 
+	OVERFLOW: hidden; TOP: -186px;
+	LEFT: -430px
+}
+#slider .slide {
+	Z-INDEX: 10; POSITION: absolute; 
+	BORDER-LEFT: #000 1px solid; WIDTH: 430px; 
+	BACKGROUND: #000; HEIGHT: 544px; OVERFLOW: hidden; 
+	CURSOR: default; LEFT: 2px;text-align:left;
+}
+
+#slider .diapo {
+	POSITION: absolute; FILTER: alpha(opacity=100); VISIBILITY: visible; opacity: 1
+}
+
+<!--544px   760px-->
+

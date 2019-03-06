@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- 配置命名空间，区别名称 -->
+<mapper namespace="com.tosit.cinema.dao.TimesDao">
+    <!-- SQL片段 -->
+    <sql id="cols">tId,begin,end,price,version</sql>
+
+    <!-- 中间，对象的属性和结果集的字段之间的对应关系 -->
+    <resultMap type="Times" id="timesRM">
+        <!-- 主键映射 -->
+        <id property="tId" column="tId"/>
+        <!-- 普通字段 property指实体的属性；column结果集的字段名称 -->
+        <result property="begin" column="begin"/>
+        <result property="end" column="end"/>
+        <result property="price" column="price"/>
+        <result property="version" column="version"/>
+        <result property="lockedSeats" column="lockedSeats"/>
+        <result property="noneSeats" column="noneSeats"/>
+        <association property="hall" javaType="Hall">
+            <id property="hId" column="hId"/>
+            <result property="hName" column="hName"/>
+            <result property="rowNums" column="rowNums"/>
+            <result property="columnNums" column="columnNums"/>
+            <result property="count" column="count"/>
+        </association>
+        <association property="movie" javaType="Movie">
+            <id property="mId" column="mId"/>
+            <result property="mName" column="mName"/>
+            <result property="mPic" column="mPic"/>
+            <result property="mType" column="mType"/>
+        </association>
+    </resultMap>
+
+
+    <!-- 关系映射 -->
+    <!-- 查询，注意Mybatis中如果有填写集合类型，只填写集合中元素的类型 -->
+    <select id="findTimesByParas" resultMap="timesRM" parameterType="map">
+        select t.*,h.*,m.* from times t left join hall h on t.hid = h.hid left join movie m on t.mid = m.mid  where h.cid=#{cId} and t.mid=#{mId}
+    </select>
+    
+    <select id="findById" parameterType="int" resultMap="timesRM">
+      select t.*,h.*,m.* from times t left join hall h on t.hid = h.hid left join movie m on t.mid = m.mid  where t.tid=#{tId} for update
+    </select>
+
+    <update id="updateLockedSeatsByTid" parameterType="object">
+      update times set lockedseats=#{arg1} where tId=#{arg0}
+    </update>
+ <!--   <select id="getTotalCount" parameterType="map" resultType="long">
+        select count(id) from user u
+        <where>
+            <if test="name!=null">
+                and u.name like CONCAT('%',#{name},'%')
+            </if>
+        </where>
+    </select>
+
+    <select id="findPage" parameterType="map" resultType="User">
+      select id,name from user u
+        <where>
+            <if test="name!=null">
+                and u.name like CONCAT('%',#{name},'%')
+            </if>
+        </where>
+        limit #{firstResult},#{pageSize}
+    </select>
+
+    <select id="getById" parameterType="int" resultType="User">
+        select id,name from user u where id=#{id}
+    </select>
+    <insert id="saveUser" parameterType="User">
+        insert into user(name) values(#{name})
+    </insert>
+
+
+    <delete id="deleteById" parameterType="int">
+        delete from user where id=#{id}
+    </delete>
+
+
+
+    <update id="updateUser" parameterType="User">
+        update user set name=#{name} where id=#{id}
+    </update>-->
+</mapper>

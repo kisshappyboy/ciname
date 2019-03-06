@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+<style type="text/css">
+#minorContainer_3 {
+	width:960px;
+	margin:0 auto;
+}
+#leftContainer_3 {
+	float:left;
+	width:610px;
+	border:solid #9B9B9B 1px;
+	padding:8px;
+}
+#rightContainer_3 {
+	float:right;
+	width:310px;
+	padding:10px;
+	background-color:#F0F0F0;
+}
+#gotoTop_3{
+	height:120px;
+	width:40px;
+	position:fixed;
+	top:400px;
+	right:157px;
+}
+#top_3{
+	background-image:url(../pic/topLogo2.jpg);
+	width:860px;
+	height:80px;
+	padding:20px 50px;
+	color:#FFF;
+}
+#recommendTop_3 {
+	background-image:url(../pic/detailedInfo_bg.gif);
+	height:40px;
+	color:#F00;
+	text-align:center;
+	font-size:24px;
+	width:300px;
+}
+#recommendContainer_3
+{
+	width:300px;
+	background-color:#FFF;
+}
+
+#recommendContext_3{
+	padding:10px;
+}
+
+#commentContainer_3{
+	
+}
+#commentText_3{
+	padding:20px;
+	
+}
+#commentList_3{
+	list-style:none;
+	
+}
+.commentListItem_3{
+	padding:10px;
+	background-color:#F0F0F0;
+}
+#commentTextArea_3{
+	height:120px;
+	width:600px;
+	
+}
+#gotoCommentTop_3{
+	text-decoration:none;
+	color:#9B9B9B;
+	padding-left:300px;
+	line-height:30px;
+	
+	
+}
+#gotoCommentTop_3:hover{
+	color:#00F;
+}
+#buttonSpan_3{
+	padding-left:5px;
+	margin-top:20px;
+	line-height:10px;
+}
+button {
+	background-image:url(../pic/button_3.jpg);
+	height:40px;
+	width:100px;
+	padding:0px;
+	border:0px;
+}
+#recommendList_3{
+	list-style:none;	
+}
+.recommendListItem_3{
+	text-decoration:none;
+	font-size:14px;
+	line-height:30px;
+	color:#9B9B9B;
+}
+.recommendListItem_3:hover{
+	background-color:#333;
+}
+.recommendNo_3{
+	float: left;
+	height: 16px;
+	line-height: 16px;
+	margin: 5px;
+	width: 16px;
+	display: inherit;
+	background-color:#F00;
+	padding:2px;
+	text-align:center;
+}
+
+</style>
